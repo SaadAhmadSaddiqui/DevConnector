@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "wesbos"
+  ],
+  "rules": {
+    "brace-style": [
+      "error",
+      "allman"
+    ],
+    "indent": [
+      "error",
+      4
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "prettier/prettier": 0
+  }
+}
