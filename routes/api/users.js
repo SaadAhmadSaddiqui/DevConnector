@@ -1,6 +1,8 @@
 const express = require( 'express' ); // Gets Express (Whatever that is)
 const gravatar = require( 'gravatar' );// Gets the avatar from the email
 const bCrypt = require( 'bcryptjs' ); // Library for password encryption
+const jwt = require('jsonwebtoken'); // Importing JWT
+const config = require('config'); // Importing config files
 const { check, validationResult } = require( 'express-validator' ); // Uses the Express Validator
 
 const User = require( '../../models/User' );// Gets the User Model
@@ -35,7 +37,7 @@ router.post( '/',
 
             if ( user )
             {
-                res.status( 400 ).json( { errors: [{ msg: 'User already exists!' }] } );
+                return res.status( 400 ).json( { errors: [{ msg: 'User already exists!' }] } );
             }
 
             // Get users gravatar
@@ -61,10 +63,25 @@ router.post( '/',
 
             const salt = await bCrypt.genSalt( 10 );
 
-            user.password = await bCrypt.hash();
+            user.password = await bCrypt.hash(password, salt);
+
+            await user.save(); 
 
             // return JSON Web Token (JWT).
 
+            const payload = 
+            {
+                id: user.id,
+            };
+
+            jwt.sign(payload, config.get('jwtToken'), { expiresIn: 360000 }, (err, token) => 
+            { 
+                if (err) 
+                {
+                    throw err;
+                }
+                res.json({ token });
+            });
         }
         catch ( error )
         {

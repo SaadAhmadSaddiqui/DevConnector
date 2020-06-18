@@ -3,16 +3,20 @@
     "wesbos"
   ],
   "rules": {
+    "object-curly-spacing": "warn",
+    "array-bracket-spacing": "warn",
+    "comma-spacing": "warn",
+    "jsx-quotes": "warn",
     "brace-style": [
-      "error",
+      "warn",
       "allman"
     ],
     "indent": [
-      "error",
+      "warn",
       4
     ],
     "semi": [
-      "error",
+      "warn",
       "always"
     ],
     "prettier/prettier": 0
