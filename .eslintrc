@@ -3,6 +3,15 @@
     "wesbos"
   ],
   "rules": {
+    "import/order": [
+      "warn",
+      "always"
+    ],
+    "space-in-parens": [
+      "warn",
+      "never"
+    ],
+    "object-property-newline": "warn",
     "object-curly-spacing": "warn",
     "array-bracket-spacing": "warn",
     "comma-spacing": "warn",
