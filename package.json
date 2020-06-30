@@ -1,38 +1,40 @@
 {
-  "name": "devconnector",
-  "version": "1.0.0",
-  "description": "Social network for developers.",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server",
-    "server": "nodemon server"
-  },
-  "author": "Saad Ahmad Saddiqui",
-  "license": "MIT",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "config": "^3.3.1",
-    "express": "^4.17.1",
-    "express-validator": "^6.5.0",
-    "gravatar": "^1.8.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.19",
-    "request": "^2.88.2"
-  },
-  "devDependencies": {
-    "babel-eslint": "^9.0.0",
-    "concurrently": "^5.2.0",
-    "eslint": "^5.14.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-config-wesbos": "0.0.19",
-    "eslint-plugin-html": "^5.0.3",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-react-hooks": "^1.3.0",
-    "nodemon": "^2.0.4",
-    "prettier": "^1.16.4"
-  }
+    "name": "devconnector",
+    "version": "1.0.0",
+    "description": "Social network for developers.",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server",
+        "server": "nodemon server",
+        "client": "npm start --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "author": "Saad Ahmad Saddiqui",
+    "license": "MIT",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "config": "^3.3.1",
+        "express": "^4.17.1",
+        "express-validator": "^6.5.0",
+        "gravatar": "^1.8.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.9.19",
+        "request": "^2.88.2"
+    },
+    "devDependencies": {
+        "babel-eslint": "^9.0.0",
+        "concurrently": "^5.2.0",
+        "eslint": "^5.14.1",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^4.1.0",
+        "eslint-config-wesbos": "0.0.19",
+        "eslint-plugin-html": "^5.0.3",
+        "eslint-plugin-import": "^2.16.0",
+        "eslint-plugin-jsx-a11y": "^6.2.1",
+        "eslint-plugin-prettier": "^3.0.1",
+        "eslint-plugin-react": "^7.12.4",
+        "eslint-plugin-react-hooks": "^1.3.0",
+        "nodemon": "^2.0.4",
+        "prettier": "^1.16.4"
+    }
 }
