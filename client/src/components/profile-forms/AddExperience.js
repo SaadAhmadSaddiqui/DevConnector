@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from 'react'
+import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addExperience } from "../../actions/profile";
@@ -89,15 +89,9 @@ AddExperience.propTypes = {
     addExperience: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = (state) => (
-    {
-
-    }
-);
-
 const mapDispatchToProps = 
 {
     addExperience
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AddExperience))
+export default connect(null, mapDispatchToProps)(withRouter(AddExperience))

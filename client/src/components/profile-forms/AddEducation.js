@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from 'react'
+import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addEducation } from "../../actions/profile";
@@ -62,7 +62,7 @@ export const AddEducation = ({ addEducation, history }) => {
                         { 
                             setFormData({ ...formData, current: !current }); 
                             toggleDisabled(!toDateDisabled);
-                        } } /> &nbsp;Current Job
+                        } } /> &nbsp;Still Studying Here?
                     </p>
                 </div>
                 <div class="form-group">
@@ -89,15 +89,9 @@ AddEducation.propTypes = {
     addEducation: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = (state) => (
-    {
-
-    }
-);
-
 const mapDispatchToProps = 
 {
     addEducation
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AddEducation))
+export default connect(null, mapDispatchToProps)(withRouter(AddEducation))
