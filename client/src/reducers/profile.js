@@ -1,4 +1,4 @@
-const { GET_PROFILE, PROFILE_ERROR, CLEAR_PROFILE } = require( "../actions/types" );
+const { GET_PROFILE, PROFILE_ERROR, CLEAR_PROFILE, UPDATE_PROFILE } = require( "../actions/types" );
 
 const initialState = 
 {
@@ -16,25 +16,26 @@ function profile(state = initialState, action)
     switch(type)
     {
         case GET_PROFILE:
+        case UPDATE_PROFILE:
             return {
                 ...state,
                 profile: payload,
                 loading: false,
                 error: {}
-            }
+            };
         case PROFILE_ERROR:
             return {
                 ...state,
                 error: payload,
                 loading: false
-            }
+            };
         case CLEAR_PROFILE:
             return {
                 ...state,
                 profile: null,
                 repos: [],
-                loading: false
-            }
+                loading: true
+            };
         default:
             return state;
     }
